@@ -1,0 +1,16 @@
+<h1>Zoo#index</h1>
+<p>Find me in app/views/zoo/index.html.erb</p>
+
+
+<% @zoos.each do |zoo|%>
+  <p>
+    <%= link_to zoo.name, zoo_path(zoo) %>
+  </p>
+  <p> <%=zoo.location%></p>
+  <p>
+    <%= link_to "edit #{zoo.name}", edit_zoo_path(zoo)%>
+  </p>
+  <p>
+    <%= link_to "destroy #{zoo.name}", zoo_path(zoo), method: :delete, data: {confirm: "Are you sure?"} %>
+  </p>
+<% end %>
